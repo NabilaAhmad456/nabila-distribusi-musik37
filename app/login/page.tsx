@@ -92,7 +92,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <Header />
 
       <div className="container mx-auto px-4 py-12">
@@ -105,16 +105,16 @@ export default function LoginPage() {
         </Link>
 
         <div className="max-w-md mx-auto">
-          <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-2xl">
+          <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 shadow-2xl">
             {/* Header */}
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Music className="text-white" size={32} />
               </div>
-              <h1 className="text-2xl font-bold text-white mb-2">
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">
                 {isLogin ? "Masuk ke Akun" : "Daftar Artis Baru"}
               </h1>
-              <p className="text-gray-300">
+              <p className="text-gray-600">
                 {isLogin
                   ? "Akses dashboard artis Anda"
                   : "Bergabung dengan ribuan artis lainnya"}
@@ -147,12 +147,12 @@ export default function LoginPage() {
             <form onSubmit={handleEmailAuth} className="space-y-6">
               {!isLogin && (
                 <div>
-                  <label className="block text-white font-medium mb-2">
+                  <label className="block text-gray-900 font-medium mb-2">
                     Nama Artis *
                   </label>
                   <div className="relative">
                     <User
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
                       size={20}
                     />
                     <input
@@ -161,7 +161,7 @@ export default function LoginPage() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required={!isLogin}
-                      className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                      className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                       placeholder="Nama panggung Anda"
                     />
                   </div>
@@ -169,12 +169,12 @@ export default function LoginPage() {
               )}
 
               <div>
-                <label className="block text-white font-medium mb-2">
+                <label className="block text-gray-900 font-medium mb-2">
                   Email *
                 </label>
                 <div className="relative">
                   <Mail
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
                     size={20}
                   />
                   <input
@@ -183,19 +183,19 @@ export default function LoginPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-white font-medium mb-2">
+                <label className="block text-gray-900 font-medium mb-2">
                   Password *
                 </label>
                 <div className="relative">
                   <Lock
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
                     size={20}
                   />
                   <input
@@ -204,7 +204,7 @@ export default function LoginPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                     placeholder="••••••••"
                     minLength={6}
                   />
@@ -213,12 +213,12 @@ export default function LoginPage() {
 
               {!isLogin && (
                 <div>
-                  <label className="block text-white font-medium mb-2">
+                  <label className="block text-gray-900 font-medium mb-2">
                     Konfirmasi Password *
                   </label>
                   <div className="relative">
                     <Lock
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
                       size={20}
                     />
                     <input
@@ -227,7 +227,7 @@ export default function LoginPage() {
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
                       required={!isLogin}
-                      className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                      className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-colors"
                       placeholder="••••••••"
                       minLength={6}
                     />
@@ -245,12 +245,12 @@ export default function LoginPage() {
             </form>
 
             {/* Toggle Login/Register */}
-            <div className="text-center mt-6 pt-6 border-t border-white/10">
-              <p className="text-gray-300">
+            <div className="text-center mt-6 pt-6 border-t border-gray-200">
+              <p className="text-gray-600">
                 {isLogin ? "Belum punya akun?" : "Sudah punya akun?"}
                 <button
                   onClick={() => setIsLogin(!isLogin)}
-                  className="text-purple-400 hover:text-purple-300 font-semibold ml-2 transition-colors"
+                  className="text-purple-600 hover:text-purple-700 font-semibold ml-2 transition-colors"
                 >
                   {isLogin ? "Daftar di sini" : "Masuk di sini"}
                 </button>
@@ -261,7 +261,7 @@ export default function LoginPage() {
             <div className="text-center mt-4">
               <Link
                 href="/dashboard"
-                className="text-gray-400 hover:text-gray-300 text-sm transition-colors"
+                className="text-gray-500 hover:text-gray-600 text-sm transition-colors"
               >
                 Admin Dashboard
               </Link>
