@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Stack Auth App",
-  description: "A Next.js app with Stack Auth",
+  title: "Nabila Ahmad Studio - Distribution Music Platform",
+  description:
+    "Platform distribusi musik terdepan di Indonesia dengan AI canggih dan harga terjangkau",
 };
 
 export default function RootLayout({
@@ -11,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="id">
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
