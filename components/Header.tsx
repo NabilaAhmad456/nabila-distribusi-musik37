@@ -39,10 +39,16 @@ export default function Header() {
               Submit Musik
             </Link>
             <Link
+              href="/artist"
+              className="text-white hover:text-purple-400 transition-colors"
+            >
+              Artist Dashboard
+            </Link>
+            <Link
               href="/dashboard"
               className="text-white hover:text-purple-400 transition-colors"
             >
-              Dashboard
+              Admin Dashboard
             </Link>
             <Link
               href="/contracts"
@@ -84,10 +90,16 @@ export default function Header() {
                 Submit Musik
               </Link>
               <Link
+                href="/artist"
+                className="text-white hover:text-purple-400 transition-colors"
+              >
+                Artist Dashboard
+              </Link>
+              <Link
                 href="/dashboard"
                 className="text-white hover:text-purple-400 transition-colors"
               >
-                Dashboard
+                Admin Dashboard
               </Link>
               <Link
                 href="/contracts"
