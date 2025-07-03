@@ -8,12 +8,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-40">
+    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40 shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Music className="text-purple-400" size={32} />
-            <h1 className="text-xl font-bold text-white">
+            <Music className="text-purple-600" size={32} />
+            <h1 className="text-xl font-bold text-gray-900">
               Nabila Ahmad Studio
             </h1>
           </div>
@@ -67,7 +67,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-gray-700"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,47 +75,47 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 bg-white/95">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Beranda
               </Link>
               <Link
                 href="/pricing"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Harga
               </Link>
               <Link
                 href="/submit"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Submit Musik
               </Link>
               <Link
                 href="/artist"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Artist Dashboard
               </Link>
               <Link
                 href="/dashboard"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Admin Dashboard
               </Link>
               <Link
                 href="/contracts"
-                className="text-white hover:text-purple-400 transition-colors"
+                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
               >
                 Kontrak
               </Link>
               <Link
                 href="/login"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-center transition-all duration-300"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-center transition-all duration-300 shadow-lg"
               >
                 Login
               </Link>

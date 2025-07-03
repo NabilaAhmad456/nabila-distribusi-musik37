@@ -53,10 +53,10 @@ export default function Features() {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Fitur Unggulan Platform
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Semua yang Anda butuhkan untuk mendistribusikan musik secara
             profesional
           </p>
@@ -66,13 +66,13 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 shadow-lg"
             >
-              <feature.icon className="text-purple-400 mb-4" size={48} />
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <feature.icon className="text-purple-600 mb-4" size={48} />
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
