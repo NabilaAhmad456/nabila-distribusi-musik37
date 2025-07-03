@@ -1,6 +1,6 @@
 "use client";
 
-import { Music, Menu, X } from "lucide-react";
+import { Music, Menu, X, User, Settings } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -8,66 +8,94 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40 shadow-lg">
+    <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Music className="text-purple-600" size={32} />
-            <h1 className="text-xl font-bold text-gray-900">
-              Nabila Ahmad Studio
-            </h1>
-          </div>
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+          >
+            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+              <Music className="text-white" size={24} />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">
+                Nabila Ahmad Studio
+              </h1>
+              <p className="text-xs text-gray-500">
+                Music Distribution Platform
+              </p>
+            </div>
+          </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1">
             <Link
               href="/"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
             >
               Beranda
             </Link>
             <Link
               href="/pricing"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
             >
               Harga
             </Link>
             <Link
+              href="/register"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+            >
+              Daftar Artis
+            </Link>
+            <Link
               href="/submit"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
             >
               Submit Musik
             </Link>
             <Link
               href="/artist"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
             >
-              Artist Dashboard
+              Dashboard Artis
             </Link>
             <Link
-              href="/dashboard"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              href="/admin"
+              className="px-4 py-2 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg font-medium transition-all duration-200"
             >
-              Admin Dashboard
+              Admin Panel
             </Link>
             <Link
               href="/contracts"
-              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+              className="px-4 py-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
             >
               Kontrak
             </Link>
+          </nav>
+
+          {/* Auth Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
             <Link
               href="/login"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-purple-600 border border-gray-300 hover:border-purple-300 rounded-lg font-medium transition-all duration-200"
             >
+              <User size={18} />
               Login
             </Link>
-          </nav>
+            <Link
+              href="/register"
+              className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
+            >
+              Daftar Gratis
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700"
+            className="lg:hidden p-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-all duration-200"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,52 +103,78 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 bg-white/95">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden mt-4 py-4 border-t border-gray-200">
+            <nav className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Beranda
               </Link>
               <Link
                 href="/pricing"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Harga
               </Link>
               <Link
+                href="/register"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Daftar Artis
+              </Link>
+              <Link
                 href="/submit"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Submit Musik
               </Link>
               <Link
                 href="/artist"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Artist Dashboard
+                Dashboard Artis
               </Link>
               <Link
-                href="/dashboard"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                href="/admin"
+                className="px-4 py-3 text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Admin Dashboard
+                Admin Panel
               </Link>
               <Link
                 href="/contracts"
-                className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
+                className="px-4 py-3 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Kontrak
               </Link>
-              <Link
-                href="/login"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-center transition-all duration-300 shadow-lg"
-              >
-                Login
-              </Link>
-            </div>
-          </nav>
+
+              {/* Mobile Auth Buttons */}
+              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 mt-4">
+                <Link
+                  href="/login"
+                  className="flex items-center justify-center gap-2 px-4 py-3 text-gray-700 hover:text-purple-600 border border-gray-300 hover:border-purple-300 rounded-lg font-medium transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <User size={18} />
+                  Login
+                </Link>
+                <Link
+                  href="/register"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Daftar Gratis
+                </Link>
+              </div>
+            </nav>
+          </div>
         )}
       </div>
     </header>
