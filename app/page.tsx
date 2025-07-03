@@ -1,12 +1,46 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Music,
+  Users,
+  Globe,
+  TrendingUp,
+  MessageCircle,
+  Shield,
+  Headphones,
+} from "lucide-react";
+import ChatBot from "@/components/ChatBot";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import Pricing from "@/components/Pricing";
+import Footer from "@/components/Footer";
+
 export default function Home() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
-    <main className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Stack Auth App</h1>
-        <p className="text-lg text-gray-600">
-          Your Next.js application with Stack Auth is now running successfully.
-        </p>
-      </div>
-    </main>
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      <Header />
+      <Hero />
+      <Features />
+      <Pricing />
+      <Footer />
+
+      {/* AI Chat Bot */}
+      <ChatBot
+        isOpen={isChatOpen}
+        onToggle={() => setIsChatOpen(!isChatOpen)}
+      />
+
+      {/* Floating Chat Button */}
+      <button
+        onClick={() => setIsChatOpen(!isChatOpen)}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+      >
+        <MessageCircle size={24} />
+      </button>
+    </div>
   );
 }
