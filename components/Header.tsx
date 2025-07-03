@@ -22,37 +22,37 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Beranda
             </Link>
             <Link
               href="/pricing"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Harga
             </Link>
             <Link
               href="/submit"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Submit Musik
             </Link>
             <Link
               href="/artist"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Artist Dashboard
             </Link>
             <Link
               href="/dashboard"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Admin Dashboard
             </Link>
             <Link
               href="/contracts"
-              className="text-white hover:text-purple-400 transition-colors"
+              className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
               Kontrak
             </Link>
