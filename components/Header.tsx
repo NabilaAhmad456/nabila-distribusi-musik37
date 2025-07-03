@@ -56,6 +56,12 @@ export default function Header() {
             >
               Kontrak
             </Link>
+            <Link
+              href="/login"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+            >
+              Login
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -106,6 +112,12 @@ export default function Header() {
                 className="text-white hover:text-purple-400 transition-colors"
               >
                 Kontrak
+              </Link>
+              <Link
+                href="/login"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-center transition-all duration-300"
+              >
+                Login
               </Link>
             </div>
           </nav>
